@@ -1,11 +1,11 @@
 require 'sinatra/base'
-require "sinatra/reloader"
+#require "sinatra/reloader"
 require 'pg'
 
 class FFApp < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
+  # configure :development do
+  #   register Sinatra::Reloader
+  # end
 
 	before do
 		$conn = PGconn.connect('localhost', '5432', '', '', 'lrff', 'postgres', '')
